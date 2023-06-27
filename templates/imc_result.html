@@ -7,5 +7,15 @@
 <body>
     <h1>Resultado</h1>
     <h2>Seu IMC é de : {{ imc }} </h2>
+    {% if imc|float < 18.5 %}
+        <h3>Você está abaixo do peso.</h3>
+    {% elif imc|float < 25 %}
+        <h3>Seu peso está normal.</h3>
+    {% elif imc|float < 30 %}
+        <h3>Você está com sobrepeso.</h3>
+    {% else %}
+        <h3>Você está com obesidade.</h3>
+    {% endif %}
+
 </body>
 </html>
